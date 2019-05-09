@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def likescounts(user)
+    @count_likes = user.favoritings.count
+  end
 
   def counts(user)
     @count_microposts = user.microposts.count
